@@ -10,7 +10,7 @@ to install all necessary packages.
 
 If you get an `npm: command not found` error or something similar, you probably haven't installed `npm` yet. Try [this](https://kinsta.com/blog/how-to-install-node-js/#how-to-install-nodejs-and-npm) link for help.
 
-You may get a message like: `7 high severity vulnerabilities`. You can ignore this. If you have `critical` vulnerabilities you can run `npm audit fix`, which should lower the number of vulnerabilities.
+You may get a message like: `7 high severity vulnerabilities`. You can ignore this.
 
 If you get an `ERESOLVE` error mentioning an upstream dependency conflict, try `npm install --legacy-peer-deps`, and if that doesn't work, `npm install --force`.
 

@@ -1,4 +1,5 @@
-import { addDoc, collection } from "firebase/firestore";
+import { unstable_ownerWindow } from "@mui/utils";
+import { addDoc, collection, updateDoc, deleteDoc, doc } from "firebase/firestore";
 import { db } from './firebase';
 
 // Functions for database mutations
@@ -25,9 +26,19 @@ export async function addEntry(entry) {
 }
 
 export async function updateEntry(entry) {
-   // TODO: Create Mutation to Edit Entry
+   
+   // TODO: Create Mutation to Edit Entry  --> Looks Good
+   await updateDoc(doc(db, "entries", entry.id), {
+      name: entry.name,
+      link: entry.link,
+      description: entry.description,
+      category: entry.category,
+      // The ID of the current user is logged with the new entry for database user-access functionality.,
+   });
 }
 
 export async function deleteEntry(entry) {
-   // TODO: Create Mutation to Delete Entry
+
+   // TODO: Create Mutation to Delete Entry --> Looks good
+   await deleteDoc(doc(db, "entries", entry.id));
 }
